@@ -1,0 +1,6 @@
+{
+  "build": {
+    "install": "pyenv install 3.10 && pyenv global 3.10 && python -m venv /opt/venv && . /opt/venv/bin/activate && pip install -r requirements.txt"
+  },
+  "start": "python yt-audio-extractor.py"
+}
