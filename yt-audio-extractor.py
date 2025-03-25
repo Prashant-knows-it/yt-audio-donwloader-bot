@@ -39,7 +39,7 @@ async def download_audio(youtube_url, update: Update, context: ContextTypes.DEFA
         'outtmpl': output_template,
         'progress_hooks': [report_progress],
         'postprocessors': [{'key': 'FFmpegExtractAudio', 'preferredcodec': 'mp3', 'preferredquality': '192'}],
-        'ffmpeg_location': 'C:/ffmpeg/bin'
+        'ffmpeg_location': '/usr/bin/ffmpeg'  # This is the default path on Linux
     }
 
     try:
