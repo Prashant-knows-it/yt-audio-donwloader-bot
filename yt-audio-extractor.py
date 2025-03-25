@@ -5,7 +5,10 @@ import time
 from telegram import Update, InputFile
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
-BOT_TOKEN = "api-key-here"
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+
+if not BOT_TOKEN:
+    raise ValueError("BOT_TOKEN is not set! Add it as an environment variable.")
 
 async def download_audio(youtube_url, update: Update, context: ContextTypes.DEFAULT_TYPE):
     output_path = "downloads"
