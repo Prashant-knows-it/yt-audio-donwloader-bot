@@ -1,11 +1,10 @@
 [phases.setup]
-nixPkgs = ["ffmpeg", "python310", "pyenv", "git"]
+nixPkgs = ["python310", "ffmpeg", "git"]
 cmds = [
-  "pyenv global 3.10",
-  "python -m venv /opt/venv",
+  "python3 -m venv /opt/venv",
   ". /opt/venv/bin/activate",
   "pip install -r requirements.txt"
 ]
 
 [start]
-cmd = "python yt-audio-extractor.py"
+cmd = ". /opt/venv/bin/activate && python yt-audio-extractor.py"
