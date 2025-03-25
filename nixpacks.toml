@@ -1,6 +1,7 @@
 [phases.setup]
-nixPkgs = ["python310", "ffmpeg", "git"]
+nixPkgs = ["python310", "python310Packages.pip", "ffmpeg", "git"]
 cmds = [
+  "python3 -m ensurepip --default-pip",
   "python3 -m venv /opt/venv",
   ". /opt/venv/bin/activate",
   "python3 -m pip install --upgrade pip",
